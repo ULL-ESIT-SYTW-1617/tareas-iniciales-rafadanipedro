@@ -1,10 +1,10 @@
 import { parallel } from 'gulp'
 
-export {default as contributors} from './scripts/contributors.js'
-import generateGitbook from './scripts/generate-gitbook.js'
-import generateWiki from './scripts/generate-wiki.js'
-import deployGitbook from './scripts/deploy-gitbook.js'
-import deployWiki from './scripts/deploy-wiki.js'
+export {default as contributors} from './scripts/contributors'
+import generateGitbook from './scripts/generate-gitbook'
+import generateWiki from './scripts/generate-wiki'
+import deployGitbook from './scripts/deploy-gitbook'
+import deployWiki from './scripts/deploy-wiki'
 
 export { generateGitbook, generateWiki, deployGitbook, deployWiki }
 
