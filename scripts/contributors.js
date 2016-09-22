@@ -37,8 +37,9 @@ function dateSince(since) {
     } else {
       str += `${years} years`
     }
+    str += ' '
   }
-  str += ' '
+
   if(months) {
     if (months === 1) {
       str += '1 month'
@@ -52,7 +53,11 @@ function dateSince(since) {
 async function print(contributors) {
   let data = `# Last update: ${new Date()}\n`
   for (let contributor of contributors) {
-    data += `${contributor.name} <${contributor.email}> (since ${contributor.date}, ${contributor.since} ago)\n`
+    data += `${contributor.name} <${contributor.email}> (since ${contributor.date}`
+    if(contributor.since) {
+      data += `, ${contributor.since} ago`
+    }
+    data += ')\n'
   }
   await fsp.writeFile(path.resolve('MAINTAINERS'), data)
 }
