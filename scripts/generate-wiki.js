@@ -1,59 +1,28 @@
-/**
- * @author github.com/christianalfoni
- * @source https://raw.githubusercontent.com/christianalfoni/react-webpack-cookbook/master/scripts/generate-wiki.js
- */
-'use strict';
+import fsp from 'fs-promise'
+import path from 'path'
 
-var path = require('path');
-
-var fs = require('fs-extra');
-var async = require('async');
-
-
-main();
-
-function main() {
-    var input = './txt';
-    var output = './wiki';
-
-    fs.mkdir(output, function() {
-        // if it dir exists already, just override content
-        generateWiki(input, output, function(err) {
-            if(err) {
-                return console.error(err);
-            }
-
-            console.log('generated wiki');
-        });
-    });
+async function generateWiki (input, output) {
+  await fsp.copy(input, output)
+  await fsp.copy(path.join(input, 'README.md'), path.join(output, 'Home.md'))
+  await generateSidebar(path.join(input, 'SUMMARY.md'), path.join(output, '_Sidebar.md'))
+  await Promise.all([
+    fsp.remove(path.join(output, 'README.md')),
+    fsp.remove(path.join(output, 'SUMMARY.md'))
+  ])
 }
 
-function generateWiki(input, output, cb) {
-    async.series([
-        fs.copy.bind(null,
-            input,
-            output
-        ),
-        fs.copy.bind(null,
-            path.join(input, 'README.md'),
-            path.join(output, 'Home.md')
-        ),
-        generateSidebar.bind(null, {
-            input: path.join(input, 'SUMMARY.md'),
-            output: path.join(output, '_Sidebar.md')
-        }),
-        fs.remove.bind(null, path.join(output, 'README.md')),
-        fs.remove.bind(null, path.join(output, 'SUMMARY.md')),
-    ], cb);
+async function generateSidebar(input, output) {
+  let data = await fsp.readFile(input, 'utf8')
+  data = data.replace(/.md/g, '')
+  await fsp.writeFile(output, data)
 }
 
-function generateSidebar(config, cb) {
-    var data = fs.readFileSync(config.input, {
-        encoding: 'utf8'
-    });
-
-    data = data.replace(/.md/g, '');
-
-    fs.writeFile(config.output, data, cb);
+export default async function main () {
+  let output = './wiki'
+  try {
+    await fsp.mkdir(output)
+  } catch(err) {
+    if(err.code !== 'EEXIST') throw err
+  }
+  await generateWiki(require('../package.json').path, output)
 }
-

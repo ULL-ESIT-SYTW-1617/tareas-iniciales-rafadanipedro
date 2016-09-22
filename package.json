@@ -4,19 +4,19 @@
   "description": "GitBook Boilerplate",
   "main": "index.js",
   "scripts": {
-    "generate-gitbook": "./scripts/losh generate-gitbook",
-    "generate-wiki": "./scripts/losh generate-wiki",
-    "build": "npm install && npm i gitbook-cli && npm run generate-gitbook && npm run generate-wiki",
-    "deploy-gitbook": "./scripts/losh deploy-gitbook",
-    "deploy-wiki": "./scripts/losh deploy-wiki",
-    "deploy": "npm run build && npm run deploy-gitbook && npm run deploy-wiki",
-    "version": "./scripts/losh version",
+    "generate-gitbook": "gulp generateGitbook",
+    "generate-wiki": "gulp generateWiki",
+    "build": "gulp",
+    "deploy-gitbook": "gulp deployGitbook",
+    "deploy-wiki": "gulp deployWiki",
+    "deploy": "gulp deploy",
+    "version": "echo \"Error: WIP\" && exit 1",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/enten/gitbook-boilerplate.git",
-    "wiki": "https://github.com/enten/gitbook-boilerplate.wiki.git"
+    "url": "https://github.com/ULL-ESIT-SYTW-1617/tareas-iniciales-rafadanipedro.git",
+    "wiki": "https://github.com/ULL-ESIT-SYTW-1617/tareas-iniciales-rafadanipedro.wiki.git"
   },
   "keywords": [
     "gitbook",
@@ -30,10 +30,15 @@
   },
   "homepage": "https://github.com/enten/gitbook-boilerplate#readme",
   "devDependencies": {
-    "async": "^1.4.0",
-    "fs-extra": "^0.22.1",
-    "gh-pages": "^0.3.1",
-    "gitbook-cli": "^0.3.4",
-    "gitbook": "^2.1.0"
-  }
+    "babel-polyfill": "6.13.0",
+    "babel-preset-es2015": "6.14.0",
+    "babel-preset-stage-0": "6.5.0",
+    "fs-promise": "0.5.0",
+    "gh-pages": "0.11.0",
+    "gitbook-cli": "2.3.0",
+    "gulp": "github:gulpjs/gulp#4.0",
+    "lodash": "4.16.1",
+    "simple-git": "1.50.0"
+  },
+  "path": "./txt"
 }
