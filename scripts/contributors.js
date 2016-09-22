@@ -62,7 +62,7 @@ async function print(contributors) {
   await fsp.writeFile(path.resolve('MAINTAINERS'), data)
 }
 
-export default function main() {
+export default function contributors() {
   return new Promise((res, rej) => {
     const repo = git()
 

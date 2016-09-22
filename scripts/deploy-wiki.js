@@ -2,7 +2,7 @@ import fsp from 'fs-promise'
 import path from 'path'
 import git from 'simple-git'
 
-export default async function main() {
+export default async function deployWiki() {
   await fsp.remove(path.resolve('wiki/.git'))
   await new Promise((res, rej) => {
     git(path.resolve('wiki'))

@@ -1,19 +1,12 @@
-import {src, dest, parallel, series} from 'gulp'
+import { parallel } from 'gulp'
 
-import 'babel-polyfill'
+export {default as contributors} from './scripts/contributors.js'
+import generateGitbook from './scripts/generate-gitbook.js'
+import generateWiki from './scripts/generate-wiki.js'
+import deployGitbook from './scripts/deploy-gitbook.js'
+import deployWiki from './scripts/deploy-wiki.js'
 
-// Importar scripts
-import scriptContributors from './scripts/contributors.js'
-import scriptGenerateGitbook from './scripts/generate-gitbook.js'
-import scriptGenerateWiki from './scripts/generate-wiki.js'
-import scriptDeployGitbook from './scripts/deploy-gitbook.js'
-import scriptDeployWiki from './scripts/deploy-wiki.js'
-
-export const contributors = () => scriptContributors()
-export const generateGitbook = () => scriptGenerateGitbook()
-export const generateWiki = () => scriptGenerateWiki()
-export const deployGitbook = () => scriptDeployGitbook()
-export const deployWiki = () => scriptDeployWiki()
+export { generateGitbook, generateWiki, deployGitbook, deployWiki }
 
 export const build = parallel(generateGitbook, generateWiki)
 export const deploy = parallel(deployGitbook, deployWiki)

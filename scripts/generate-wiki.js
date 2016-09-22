@@ -1,7 +1,7 @@
 import fsp from 'fs-promise'
 import path from 'path'
 
-async function generateWiki (input, output) {
+async function copyFiles (input, output) {
   await fsp.copy(input, output)
   await fsp.copy(path.join(input, 'README.md'), path.join(output, 'Home.md'))
   await generateSidebar(path.join(input, 'SUMMARY.md'), path.join(output, '_Sidebar.md'))
@@ -17,12 +17,12 @@ async function generateSidebar(input, output) {
   await fsp.writeFile(output, data)
 }
 
-export default async function main () {
+export default async function generateWiki () {
   let output = './wiki'
   try {
     await fsp.mkdir(output)
   } catch(err) {
     if(err.code !== 'EEXIST') throw err
   }
-  await generateWiki(require('../package.json').path, output)
+  await copyFiles(require('../package.json').path, output)
 }
