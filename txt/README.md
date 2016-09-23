@@ -1,17 +1,4 @@
-# Book Title
+# Tareas Iniciales Sistemas y Tecnologías Web
 
-> Book introduction here.
-
-## Live Demo
-
-[Check demo!](http://my-user.github.io/my-repo)
-
-## Background
-
-> [gitbook](http://www.gitbook.io) is used to generate github pages.
-
-## Contributing
-
-1. Create Issue
-2. Fork and PR
-
+Este tutorial explicará los pasos para instalar las diferentes herramientas que se utilizarán a lo largo de la asignatura  **SYTW** . Además, se mostrarán
+capturas del correcto funcionamiento de las mismas.
