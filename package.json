@@ -40,5 +40,8 @@
     "lodash": "4.16.1",
     "simple-git": "1.50.0"
   },
-  "path": "./txt"
+  "path": "./txt",
+  "dependencies": {
+    "babel-register": "^6.14.0"
+  }
 }
