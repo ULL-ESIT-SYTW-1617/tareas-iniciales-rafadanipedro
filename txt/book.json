@@ -1,5 +1,6 @@
 {
     "title": "Tareas iniciales",
     "language": "es",
-    "plugins": ["youtube"]
+    "author": "Rafael Herrero, Daniel Ramos, Pedro Ramos",
+    "plugins": ["youtube", "advanced-emoji"]
 }
