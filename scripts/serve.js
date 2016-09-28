@@ -6,9 +6,7 @@ export default function generateGitbook() {
   return new Promise((res, rej) => {
     const gb = spawn('node', [
       path.resolve('node_modules/gitbook-cli/bin/gitbook.js'),
-      'build',
-      '.',
-      './gh-pages'
+      'serve'
     ])
 
     gb.stdout.on('data', data => process.stdout.write(data.toString()))
