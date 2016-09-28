@@ -16,6 +16,8 @@
   * [Cómo usar Gh-pages para automatizar despliegues](Gh-page/.md)
   * [Cómo añadir estilos a las Gh-pages](Gh-page/.md)
 
-* [Gulpfile](Gulpfile/README.md)
-  * [Qué es Gulpfile](Gulpfile/.md)
-  * [Cómo automatizar tareas con Gulpfile](Gulpfile/.md)
+* [Gulp](Gulp/README.md)
+  * [Qué es Gulp](Gulp/queEsGulp.md)
+  * [Cómo automatizar tareas con Gulp](Gulp/automatizarTareasConGulp.md)
+  * [Gulp 4 y ES7](Gulp/gulp4yES7.md)
+  * [Nuestro Gulpfile](Gulp/nuestroGulpfile.md)

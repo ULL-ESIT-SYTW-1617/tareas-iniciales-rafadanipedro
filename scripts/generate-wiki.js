@@ -11,7 +11,7 @@ async function copyFiles (input, output) {
   ])
 }
 
-async function generateSidebar(input, output) {
+async function generateSidebar (input, output) {
   let data = await fsp.readFile(input, 'utf8')
   data = data.replace(/.md/g, '')
   await fsp.writeFile(output, data)
@@ -21,8 +21,8 @@ export default async function generateWiki () {
   let output = './wiki'
   try {
     await fsp.mkdir(output)
-  } catch(err) {
-    if(err.code !== 'EEXIST') throw err
+  } catch (err) {
+    if (err.code !== 'EEXIST') throw err
   }
-  await copyFiles(require('../package.json').path, output)
+  await copyFiles(require('../book.json').root, output)
 }

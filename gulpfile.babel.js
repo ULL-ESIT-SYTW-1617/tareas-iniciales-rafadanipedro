@@ -5,7 +5,7 @@ import generateGitbook from './scripts/generate-gitbook'
 import generateWiki from './scripts/generate-wiki'
 import deployGitbook from './scripts/deploy-gitbook'
 import deployWiki from './scripts/deploy-wiki'
-import serve from './scripts/serve'
+import serve from './scripts/gitbook-serve'
 import install from './scripts/gitbook-install'
 
 export { generateGitbook, generateWiki, deployGitbook, deployWiki, serve }

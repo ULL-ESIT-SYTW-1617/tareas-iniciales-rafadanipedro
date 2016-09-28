@@ -1,16 +1,18 @@
 import path from 'path'
 
-const spawn = require('child_process').spawn;
+const spawn = require('child_process').spawn
 
-export default function generateGitbook() {
+export default function gitbookSpawn(params) {
   return new Promise((res, rej) => {
     const gb = spawn('node', [
       path.resolve('node_modules/gitbook-cli/bin/gitbook.js'),
-      'serve'
+      ...params
     ])
 
     gb.stdout.on('data', data => process.stdout.write(data.toString()))
 
-    gb.on('close', res)
+    gb.on('close', code => {
+      code ? rej() : res()
+    })
   })
 }

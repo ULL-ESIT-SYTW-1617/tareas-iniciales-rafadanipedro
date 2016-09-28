@@ -3,7 +3,7 @@ import git from 'simple-git'
 import path from 'path'
 import _ from 'lodash'
 
-function getContributors(log) {
+function getContributors (log) {
   let contributors = []
   for (let commit of log.all) {
     let i = _.findIndex(contributors, contributor => contributor.name === commit.author_name)
@@ -25,13 +25,13 @@ function getContributors(log) {
   return contributors
 }
 
-function dateSince(since) {
+function dateSince (since) {
   let today = new Date()
   let years = today.getYear() - since.getYear()
   let months = today.getMonth() - since.getMonth()
   let str = ''
 
-  if(years) {
+  if (years) {
     if (years === 1) {
       str += '1 year'
     } else {
@@ -40,7 +40,7 @@ function dateSince(since) {
     str += ' '
   }
 
-  if(months) {
+  if (months) {
     if (months === 1) {
       str += '1 month'
     } else {
@@ -50,11 +50,11 @@ function dateSince(since) {
   return str
 }
 
-async function print(contributors) {
+async function print (contributors) {
   let data = `# Last update: ${new Date()}\n`
   for (let contributor of contributors) {
     data += `${contributor.name} <${contributor.email}> (since ${contributor.date}`
-    if(contributor.since) {
+    if (contributor.since) {
       data += `, ${contributor.since} ago`
     }
     data += ')\n'
@@ -62,12 +62,13 @@ async function print(contributors) {
   await fsp.writeFile(path.resolve('MAINTAINERS'), data)
 }
 
-export default function contributors() {
-  return new Promise((res, rej) => {
+export default function contributors () {
+  return new Promise((resolve, reject) => {
     const repo = git()
 
     repo.log((err, log) => {
-      print(getContributors(log)).then(res).catch(console.error)
+      if (err) reject(err)
+      print(getContributors(log)).then(resolve).catch(console.error)
     })
   })
 }
