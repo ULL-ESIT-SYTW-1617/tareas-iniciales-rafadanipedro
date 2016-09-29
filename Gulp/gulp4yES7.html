@@ -151,9 +151,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3" data-path="../Gitbook/">
+        <li class="chapter " data-level="1.3" data-path="../ElGitbook/">
             
-                <a href="../Gitbook/">
+                <a href="../ElGitbook/">
             
                     
                     Gitbook
@@ -165,9 +165,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1" data-path="../Gitbook/gitbook.html">
+        <li class="chapter " data-level="1.3.1" data-path="../ElGitbook/gitbook.html">
             
-                <a href="../Gitbook/gitbook.html">
+                <a href="../ElGitbook/gitbook.html">
             
                     
                     Qué es Gitbook
@@ -178,9 +178,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2" data-path="../Gitbook/sincroniza_gitbook.html">
+        <li class="chapter " data-level="1.3.2" data-path="../ElGitbook/sincroniza_gitbook.html">
             
-                <a href="../Gitbook/sincroniza_gitbook.html">
+                <a href="../ElGitbook/sincroniza_gitbook.html">
             
                     
                     Cómo sincronizar Gitbook con Github
@@ -191,9 +191,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.3" data-path="../Gitbook/plugins_gitbook.html">
+        <li class="chapter " data-level="1.3.3" data-path="../ElGitbook/plugins_gitbook.html">
             
-                <a href="../Gitbook/plugins_gitbook.html">
+                <a href="../ElGitbook/plugins_gitbook.html">
             
                     
                     Cómo utilizar plugins en Gitbook
@@ -204,12 +204,25 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.4" data-path="../Gitbook/desplegar_gitbook.html">
+        <li class="chapter " data-level="1.3.4" data-path="../ElGitbook/desplegar_gitbook.html">
             
-                <a href="../Gitbook/desplegar_gitbook.html">
+                <a href="../ElGitbook/desplegar_gitbook.html">
             
                     
                     Cómo se despliega un Gitbook
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../ElGitbook/bookjson.html">
+            
+                <a href="../ElGitbook/bookjson.html">
+            
+                    
+                    Para qué se usa book.json
             
                 </a>
             
@@ -396,7 +409,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="gulp-4-y-es7">Gulp 4 y ES7</h1><p>Dentro de poco saldr&#xE1; la <a href="https://github.com/gulpjs/gulp/blob/4.0/CHANGELOG.md" target="_blank">versi&#xF3;n 4 de Gulp</a>. En esta secci&#xF3;n comentaremos algunas de sus novedades as&#xED; como su combinaci&#xF3;n con nuevas funciones de <a href="https://h3manth.com/new/blog/2015/es7-features/" target="_blank">ECMAScript 2016 (ES7)</a>. La versi&#xF3;n 4 de gulp y su documentaci&#xF3;n correspondiente est&#xE1; disponible en la <a href="https://github.com/gulpjs/gulp/tree/4.0" target="_blank">rama &quot;4.0&quot;</a> del repositorio de Github.</p><h2 id="instalaci&#xF3;n">Instalaci&#xF3;n</h2><p>Para poder hacer uso de estas novedades bleeding edge, necesitaremos hacer una incializaci&#xF3;n algo m&#xE1;s compleja que la normal.</p><h3 id="1-instalar-gulp4-babel-sus-presets-y-plugins">1. Instalar Gulp#4, babel, sus presets y plugins</h3><p>Necesitaremos babel para poder transpilar el c&#xF3;digo de ES7 a uno que pueda ejecutar node, ya que estas caracter&#xED;sticas nuevas de javascript no est&#xE1;n disponibles ni siquiera usando el par&#xE1;metro <code>--harmony</code>. Vamos a necesitar el perset para transpilar a ES2015, <code>stage-0</code>, y el plugin <code>babel-polyfill</code>. Con toda esta sopa de paquetes podremos emular un entorno de ES7.</p><p><code>npm install babel-register babel-preset-es2015 babel-preset-stage-0 babel-polyfill</code></p><p>Para usar Gulp 4 necesitamos eliminar las versiones anteriores de Gulp e instalar las nuevas, ya que no son compatibles:</p><pre><code>npm rm -g gulp
+                                <h1 id="gulp-4-y-es7">Gulp 4 y ES7</h1><p>Dentro de poco saldr&#xE1; la <a href="https://github.com/gulpjs/gulp/blob/4.0/CHANGELOG.md" target="_blank">versi&#xF3;n 4 de Gulp</a>. En esta secci&#xF3;n comentaremos algunas de sus novedades as&#xED; como su combinaci&#xF3;n con nuevas funciones de <a href="https://h3manth.com/new/blog/2015/es7-features/" target="_blank">ECMAScript 2016 (ES7)</a>. La versi&#xF3;n 4 de gulp y su documentaci&#xF3;n correspondiente est&#xE1; disponible en la <a href="https://github.com/gulpjs/gulp/tree/4.0" target="_blank">rama &quot;4.0&quot;</a> del repositorio de Github.</p><h2 id="instalaci&#xF3;n">Instalaci&#xF3;n</h2><p>Para poder hacer uso de estas novedades bleeding edge, necesitaremos hacer una incializaci&#xF3;n algo m&#xE1;s compleja que la normal.</p><h3 id="1-instalar-gulp-4-babel-sus-presets-y-plugins">1. Instalar Gulp 4, babel, sus presets y plugins</h3><p>Necesitaremos babel para poder transpilar el c&#xF3;digo de ES7 a uno que pueda ejecutar node, ya que estas caracter&#xED;sticas nuevas de javascript no est&#xE1;n disponibles ni siquiera usando el par&#xE1;metro <code>--harmony</code>. Vamos a necesitar el perset para transpilar a ES2015, <code>stage-0</code>, y el plugin <code>babel-polyfill</code>. Con toda esta sopa de paquetes podremos emular un entorno de ES7.</p><p><code>npm install babel-register babel-preset-es2015 babel-preset-stage-0 babel-polyfill</code></p><p>Para usar Gulp 4 necesitamos eliminar las versiones anteriores de Gulp e instalar las nuevas, ya que no son compatibles:</p><pre><code>npm rm -g gulp
 npm install -g gulp-cli
 npm install -D &apos;gulpjs/gulp.git#4.0&apos;</code></pre>
 <h3 id="2-crear-el-fichero-babelrc">2. Crear el fichero <code>.babelrc</code></h3><p>Este fichero lo usaremos para almacenar la configuraci&#xF3;n de babel, que en nuestro caso es muy sencillito:</p><pre><code class="lang-json">{
@@ -419,7 +432,7 @@ npm install -D &apos;gulpjs/gulp.git#4.0&apos;</code></pre>
 
 <span class="hljs-comment">// Exporando nuestras variables</span>
 <span class="hljs-keyword">export</span> { foo, bar }</code></pre>
-<h2 id="es7-asnyc-y-await">ES7, <code>asnyc</code> y <code>await</code></h2><p>Una de las novedades de ES7 (que est&#xE1; un poco verde todav&#xED;a), son las nuevas palabras claves <code>async</code> y <code>await</code>. Con ellas podemos crear funciones as&#xED;ncronas de una forma mucho m&#xE1;s legible que con callbacks o promesas, y as&#xED; evitando un callback hell.</p><p><strong>Usando callbacks</strong></p><pre><code class="lang-javascript"><span class="hljs-keyword">import</span> fs <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;fs&apos;</span>
+<h2 id="es7-async-y-await">ES7, <code>async</code> y <code>await</code></h2><p>Una de las novedades de ES7 (que est&#xE1; un poco verde todav&#xED;a), son las nuevas palabras claves <code>async</code> y <code>await</code>. Con ellas podemos crear funciones as&#xED;ncronas de una forma mucho m&#xE1;s legible que con callbacks o promesas, y as&#xED; evitando un callback hell.</p><p><strong>Usando callbacks</strong></p><pre><code class="lang-javascript"><span class="hljs-keyword">import</span> fs <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;fs&apos;</span>
 
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params">src, dst, callback</span>) </span>{
   fs.readFile(src, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err, data</span>) </span>{
@@ -516,7 +529,7 @@ foo(<span class="hljs-string">&apos;srcDir&apos;</span>, <span class="hljs-strin
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Gulp 4 y ES7","level":"1.5.3","depth":2,"next":{"title":"Nuestro Gulpfile","level":"1.5.4","depth":2,"path":"Gulp/nuestroGulpfile.md","ref":"Gulp/nuestroGulpfile.md","articles":[]},"previous":{"title":"Cómo automatizar tareas con Gulp","level":"1.5.2","depth":2,"path":"Gulp/automatizarTareasConGulp.md","ref":"Gulp/automatizarTareasConGulp.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","advanced-emoji"],"root":"./txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"youtube":{},"advanced-emoji":{"embedEmojis":false},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Rafael Herrero, Daniel Ramos, Pedro Ramos","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Tareas iniciales","language":"es","gitbook":"*"},"file":{"path":"Gulp/gulp4yES7.md","mtime":"2016-09-28T19:35:39.516Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-09-29T15:03:08.219Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Gulp 4 y ES7","level":"1.5.3","depth":2,"next":{"title":"Nuestro Gulpfile","level":"1.5.4","depth":2,"path":"Gulp/nuestroGulpfile.md","ref":"Gulp/nuestroGulpfile.md","articles":[]},"previous":{"title":"Cómo automatizar tareas con Gulp","level":"1.5.2","depth":2,"path":"Gulp/automatizarTareasConGulp.md","ref":"Gulp/automatizarTareasConGulp.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","advanced-emoji"],"root":"./txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"youtube":{},"advanced-emoji":{"embedEmojis":false},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Rafael Herrero, Daniel Ramos, Pedro Ramos","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Tareas iniciales","language":"es","gitbook":"*"},"file":{"path":"Gulp/gulp4yES7.md","mtime":"2016-09-29T15:20:37.753Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-09-29T15:30:32.420Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
