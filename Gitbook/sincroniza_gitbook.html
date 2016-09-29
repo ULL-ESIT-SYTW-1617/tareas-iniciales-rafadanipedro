@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>
 <html lang="es" >
     <head>
-        <title>Cómo se despliega un Gitbook · Tareas iniciales</title>
+        <title>Cómo sincronizar Gitbook con Github · Tareas iniciales</title>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -12,24 +12,24 @@
         
         
     
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../gitbook/style.css">
 
     
             
                 
-                <link rel="stylesheet" href="gitbook-plugin-advanced-emoji/emoji-website.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
                 
             
                 
-                <link rel="stylesheet" href="gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
                 
             
                 
-                <link rel="stylesheet" href="gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
                 
             
                 
-                <link rel="stylesheet" href="gitbook-plugin-fontsettings/website.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
         
@@ -57,14 +57,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="images/apple-touch-icon-precomposed-152.png">
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../Gh-page/" />
+    <link rel="next" href="plugins_gitbook.html" />
     
     
-    <link rel="prev" href="plugins_gitbook.html" />
+    <link rel="prev" href="gitbook.html" />
     
 
     </head>
@@ -178,7 +178,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2" data-path="sincroniza_gitbook.html">
+        <li class="chapter active" data-level="1.3.2" data-path="sincroniza_gitbook.html">
             
                 <a href="sincroniza_gitbook.html">
             
@@ -204,7 +204,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.4" data-path="desplegar_gitbook.html">
+        <li class="chapter " data-level="1.3.4" data-path="desplegar_gitbook.html">
             
                 <a href="desplegar_gitbook.html">
             
@@ -381,7 +381,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Cómo se despliega un Gitbook</a>
+        <a href=".." >Cómo sincronizar Gitbook con Github</a>
     </h1>
 </div>
 
@@ -396,7 +396,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                
+                                <h2 id="&#xBF;c&#xF3;mo-sincronizar-gitbook-con-github">&#xBF;C&#xF3;mo sincronizar Gitbook con Github?</h2><p>Para la sincronizaci&#xF3;n de un repositorio <strong>Github</strong> con la plataforma <strong>GitBook</strong>, lo primero que se tiene que hacer es crear un repositorio <strong>p&#xFA;blico</strong> en Github y un libro en Gitbook recomendando que tengan el mismo nombre ambos repositorios.</p><p>Una vez creados el libro y el repositorio, se debe acceder a las herramientas del libro <strong>Setting</strong> e ir al apartado de Github.</p><p><img alt="Setting" src="images/setting.png"></p><p>Una vez dentro, se proceder&#xE1; a elegir el repositorio de github con el que se quiere sincronizar.</p><p><img alt="Elecci&#xF3;n del repositorio" src="images/repositorio.png"></p><p>Elegido el repositorio, se prosigue pulsando en el bot&#xF3;n <strong>Sync</strong> verde que aparece. Una vez realizada esta operaci&#xF3;n, si todo ha salido bien deber&#xED;a de aparecer un mensaje en verde indicando que la intengraci&#xF3;n con Github est&#xE1; funcionando. En caso de que no haya funcionado correctamente, comprobar el <strong>Webhook</strong> y ver que el repositorio que se abre es el correcto.</p><p><img alt="Libro sincronizado" src="images/sincronizacion.png"></p><p>Para comprobar que funciona la integraci&#xF3;n con Github, realizar cambios en el libro a crear en el repositorio en Github y comprobar que el libro en Gitbook se ha modificado correctamente.</p>
                                 
                                 </section>
                             
@@ -423,12 +423,12 @@
 
             
                 
-                <a href="plugins_gitbook.html" class="navigation navigation-prev " aria-label="Previous page: Cómo utilizar plugins en Gitbook">
+                <a href="gitbook.html" class="navigation navigation-prev " aria-label="Previous page: Qué es Gitbook">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../Gh-page/" class="navigation navigation-next " aria-label="Next page: Gh-pages">
+                <a href="plugins_gitbook.html" class="navigation navigation-next " aria-label="Next page: Cómo utilizar plugins en Gitbook">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -439,37 +439,37 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Cómo se despliega un Gitbook","level":"1.3.4","depth":2,"next":{"title":"Gh-pages","level":"1.4","depth":1,"path":"Gh-page/README.md","ref":"Gh-page/README.md","articles":[{"title":"Qué son las Gh-pages","level":"1.4.1","depth":2,"path":"Gh-page/.md","ref":"Gh-page/.md","articles":[]},{"title":"Cómo usar Gh-pages para automatizar despliegues","level":"1.4.2","depth":2,"path":"Gh-page/.md","ref":"Gh-page/.md","articles":[]},{"title":"Cómo añadir estilos a las Gh-pages","level":"1.4.3","depth":2,"path":"Gh-page/.md","ref":"Gh-page/.md","articles":[]}]},"previous":{"title":"Cómo utilizar plugins en Gitbook","level":"1.3.3","depth":2,"path":"Gitbook/plugins_gitbook.md","ref":"Gitbook/plugins_gitbook.md","articles":[]},"dir":"neutral"},"config":{"plugins":["youtube","advanced-emoji"],"root":"./txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"youtube":{},"advanced-emoji":{"embedEmojis":false},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Rafael Herrero, Daniel Ramos, Pedro Ramos","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Tareas iniciales","language":"es","gitbook":"*"},"file":{"path":"Gitbook/desplegar_gitbook.md","mtime":"2016-09-28T19:48:31.171Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-09-28T21:04:08.518Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Cómo sincronizar Gitbook con Github","level":"1.3.2","depth":2,"next":{"title":"Cómo utilizar plugins en Gitbook","level":"1.3.3","depth":2,"path":"Gitbook/plugins_gitbook.md","ref":"Gitbook/plugins_gitbook.md","articles":[]},"previous":{"title":"Qué es Gitbook","level":"1.3.1","depth":2,"path":"Gitbook/gitbook.md","ref":"Gitbook/gitbook.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","advanced-emoji"],"root":"./txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"youtube":{},"advanced-emoji":{"embedEmojis":false},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Rafael Herrero, Daniel Ramos, Pedro Ramos","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Tareas iniciales","language":"es","gitbook":"*"},"file":{"path":"Gitbook/sincroniza_gitbook.md","mtime":"2016-09-29T09:51:32.821Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-09-29T10:05:15.431Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
 
         
-    <script src="gitbook.js"></script>
-    <script src="theme.js"></script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
     
         
-        <script src="gitbook-plugin-search/search-engine.js"></script>
-        
-    
-        
-        <script src="gitbook-plugin-search/search.js"></script>
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
         
     
         
-        <script src="gitbook-plugin-lunr/lunr.min.js"></script>
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
         
     
         
-        <script src="gitbook-plugin-lunr/search-lunr.js"></script>
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
         
     
         
-        <script src="gitbook-plugin-sharing/buttons.js"></script>
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
         
     
         
-        <script src="gitbook-plugin-fontsettings/fontsettings.js"></script>
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
         
     
 
