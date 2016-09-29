@@ -42,6 +42,7 @@
     "gh-pages": "0.11.0",
     "gitbook-cli": "2.3.0",
     "gulp": "gulpjs/gulp#4.0",
+    "gulp-clean": "^0.3.2",
     "lodash": "4.16.2",
     "simple-git": "1.51.0"
   }
