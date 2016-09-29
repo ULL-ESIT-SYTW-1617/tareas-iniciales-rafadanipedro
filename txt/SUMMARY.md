@@ -5,12 +5,12 @@
     * [NodeJS](NodeJS/nodejs.md)
     * [NPM, Express y Package.json](NodeJS/npm_express_json.md)
 
-* [Gitbook](Gitbook/README.md)
-  * [Qué es Gitbook](Gitbook/gitbook.md)
-  * [Cómo sincronizar Gitbook con Github](Gitbook/sincroniza_gitbook.md)
-  * [Cómo utilizar plugins en Gitbook](Gitbook/plugins_gitbook.md)
-  * [Cómo se despliega un Gitbook](Gitbook/desplegar_gitbook.md)
-  * [Para qué se usa book.json](Gitbook/bookjson.md)
+* [Gitbook](ElGitbook/README.md)
+  * [Qué es Gitbook](ElGitbook/gitbook.md)
+  * [Cómo sincronizar Gitbook con Github](ElGitbook/sincroniza_gitbook.md)
+  * [Cómo utilizar plugins en Gitbook](ElGitbook/plugins_gitbook.md)
+  * [Cómo se despliega un Gitbook](ElGitbook/desplegar_gitbook.md)
+  * [Para qué se usa book.json](ElGitbook/bookjson.md)
 
 * [Gh-pages](Gh-page/README.md)
   * [Qué son las Gh-pages](Gh-page/.md)

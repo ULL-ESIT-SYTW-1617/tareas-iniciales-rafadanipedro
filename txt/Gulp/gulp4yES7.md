@@ -7,7 +7,7 @@ Instalación
 ------------------------------------
 Para poder hacer uso de estas novedades bleeding edge, necesitaremos hacer una incialización algo más compleja que la normal.
 
-### 1. Instalar Gulp#4, babel, sus presets y plugins
+### 1. Instalar Gulp 4, babel, sus presets y plugins
 
 Necesitaremos babel para poder transpilar el código de ES7 a uno que pueda ejecutar node, ya que estas características nuevas de javascript no están disponibles ni siquiera usando el parámetro `--harmony`. Vamos a necesitar el perset para transpilar a ES2015, `stage-0`, y el plugin `babel-polyfill`. Con toda esta sopa de paquetes podremos emular un entorno de ES7.
 
@@ -56,7 +56,7 @@ const bar = () => console.log('Hola Mundo!')
 export { foo, bar }
 ```
 
-ES7, `asnyc` y `await`
+ES7, `async` y `await`
 ------------------------------------
 Una de las novedades de ES7 (que está un poco verde todavía), son las nuevas palabras claves `async` y `await`. Con ellas podemos crear funciones asíncronas de una forma mucho más legible que con callbacks o promesas, y así evitando un callback hell.
 

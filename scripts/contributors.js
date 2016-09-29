@@ -15,11 +15,9 @@ function getContributors (log) {
         date,
         since: dateSince(date)
       })
-    } else {
-      if (contributors[i].date < date) {
-        contributors[i].date = date
-        contributors[i].since = dateSince(date)
-      }
+    } else if (contributors[i].date < date) {
+      contributors[i].date = date
+      contributors[i].since = dateSince(date)
     }
   }
   return contributors

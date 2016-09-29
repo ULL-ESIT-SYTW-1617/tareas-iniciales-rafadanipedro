@@ -4,7 +4,7 @@ export default function deployGitbook () {
   return new Promise((resolve, reject) => {
     GhPages.publish('./gh-pages', {
       repo: require('../package.json').repository.url,
-      logger: console.error
+      logger: console.log
     }, resolve)
   })
 }
