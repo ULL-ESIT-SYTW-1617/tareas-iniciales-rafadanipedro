@@ -1,4 +1,4 @@
-## ¿Qué es Gitbook?
+# ¿Qué es Gitbook?
 
 **Gitbook** es una plataforma que permite al usuario publicar la documentación  de su proyecto utilizando diferentes plantillas . Las plantillas que posee Gitbook  para crear una documentación son:
 
@@ -8,7 +8,7 @@
 
 Para poder utilizar la plataforma Gitbook, se puede realizar de manera online o mediante su aplicación de escritorio.Para la descarga de la aplicación de escritorio, se debe visitar el siguiente enlace [Gitbook Editor](https://www.gitbook.com/editor).
 
-Sin embargo, si se quiere realizar de manera online, se puede iniciar sesión mediante  **Twitter**,**Facebook**,**Google+** o **Github**.
+Sin embargo, si se quiere realizar de manera online, se puede iniciar sesión mediante  **Twitter**, **Facebook**, **Google+** o **Github**.
 
 ![Inicio de sesión](images/sesion.png)
 

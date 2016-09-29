@@ -10,6 +10,7 @@
   * [Cómo sincronizar Gitbook con Github](Gitbook/sincroniza_gitbook.md)
   * [Cómo utilizar plugins en Gitbook](Gitbook/plugins_gitbook.md)
   * [Cómo se despliega un Gitbook](Gitbook/desplegar_gitbook.md)
+  * [Para qué se usa book.json](Gitbook/bookjson.md)
 
 * [Gh-pages](Gh-page/README.md)
   * [Qué son las Gh-pages](Gh-page/.md)
