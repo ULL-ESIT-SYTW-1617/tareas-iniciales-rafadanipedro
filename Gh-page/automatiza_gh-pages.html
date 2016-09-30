@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>
 <html lang="es" >
     <head>
-        <title>Gitbook · Tareas iniciales</title>
+        <title>Cómo usar Gh-pages para automatizar despliegues · Tareas iniciales</title>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -61,10 +61,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="gitbook.html" />
+    <link rel="next" href="../Gulp/" />
     
     
-    <link rel="prev" href="../NodeJS/npm_express_json.html" />
+    <link rel="prev" href="gh-pages.html" />
     
 
     </head>
@@ -151,9 +151,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3" data-path="./">
+        <li class="chapter " data-level="1.3" data-path="../ElGitbook/">
             
-                <a href="./">
+                <a href="../ElGitbook/">
             
                     
                     Gitbook
@@ -165,9 +165,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1" data-path="gitbook.html">
+        <li class="chapter " data-level="1.3.1" data-path="../ElGitbook/gitbook.html">
             
-                <a href="gitbook.html">
+                <a href="../ElGitbook/gitbook.html">
             
                     
                     Qué es Gitbook
@@ -178,9 +178,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2" data-path="sincroniza_gitbook.html">
+        <li class="chapter " data-level="1.3.2" data-path="../ElGitbook/sincroniza_gitbook.html">
             
-                <a href="sincroniza_gitbook.html">
+                <a href="../ElGitbook/sincroniza_gitbook.html">
             
                     
                     Cómo sincronizar Gitbook con Github
@@ -191,9 +191,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.3" data-path="plugins_gitbook.html">
+        <li class="chapter " data-level="1.3.3" data-path="../ElGitbook/plugins_gitbook.html">
             
-                <a href="plugins_gitbook.html">
+                <a href="../ElGitbook/plugins_gitbook.html">
             
                     
                     Cómo utilizar plugins en Gitbook
@@ -204,9 +204,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.4" data-path="desplegar_gitbook.html">
+        <li class="chapter " data-level="1.3.4" data-path="../ElGitbook/desplegar_gitbook.html">
             
-                <a href="desplegar_gitbook.html">
+                <a href="../ElGitbook/desplegar_gitbook.html">
             
                     
                     Cómo se despliega un Gitbook
@@ -217,9 +217,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.5" data-path="bookjson.html">
+        <li class="chapter " data-level="1.3.5" data-path="../ElGitbook/bookjson.html">
             
-                <a href="bookjson.html">
+                <a href="../ElGitbook/bookjson.html">
             
                     
                     Para qué se usa book.json
@@ -235,9 +235,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="../Gh-page/">
+        <li class="chapter " data-level="1.4" data-path="./">
             
-                <a href="../Gh-page/">
+                <a href="./">
             
                     
                     Gh-pages
@@ -249,9 +249,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.1" data-path="../Gh-page/gh-pages.html">
+        <li class="chapter " data-level="1.4.1" data-path="gh-pages.html">
             
-                <a href="../Gh-page/gh-pages.html">
+                <a href="gh-pages.html">
             
                     
                     Qué son las Gh-pages
@@ -262,9 +262,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.2" data-path="../Gh-page/automatiza_gh-pages.html">
+        <li class="chapter active" data-level="1.4.2" data-path="automatiza_gh-pages.html">
             
-                <a href="../Gh-page/automatiza_gh-pages.html">
+                <a href="automatiza_gh-pages.html">
             
                     
                     Cómo usar Gh-pages para automatizar despliegues
@@ -381,7 +381,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Gitbook</a>
+        <a href=".." >Cómo usar Gh-pages para automatizar despliegues</a>
     </h1>
 </div>
 
@@ -396,15 +396,17 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="informaci&#xF3;n-gitbook">Informaci&#xF3;n Gitbook</h1><ul><li><a href="gitbook.html">Qu&#xE9; es Gitbook</a>
-</li>
-<li><a href="sincroniza_gitbook.html">C&#xF3;mo sincronizar Gitbook con Github</a>
-</li>
-<li><a href="plugins_gitbook.html">C&#xF3;mo utilizar plugins en Gitbook</a>
-</li>
-<li><a href="desplegar_gitbook.html">Como se despliega un Gitbook</a>
-</li></ul>
+                                <h1 id="c&#xF3;mo-usar-gh-pages-para-automatizar-despliegues">C&#xF3;mo usar Gh-pages para automatizar despliegues</h1><p>En esta pr&#xE1;ctica hemos usado el mismo script que ven&#xED;a en el boilerplate. Este script de Node.js usa el m&#xF3;dulo <a href="https://www.npmjs.com/package/gh-pages" target="_blank">gh-pages</a> como interfaz para interactuar con el repositorio.</p><pre><code class="lang-javascript"><span class="hljs-keyword">import</span> GhPages <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;gh-pages&apos;</span>
 
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">deployGitbook</span> (<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>((resolve, reject) =&gt; {
+    GhPages.publish(<span class="hljs-string">&apos;./gh-pages&apos;</span>, {
+      repo: <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;../package.json&apos;</span>).repository.url,
+      logger: <span class="hljs-built_in">console</span>.log
+    }, resolve)
+  })
+}</code></pre>
+<p>Delegamos totalmente la tarea de despliegue en este script. Le pasamos como par&#xE1;metro el campo <code>repository.url</code> del fichero <code>package.json</code>, que contiene la direcci&#xF3;n del repositorio.</p>
                                 
                                 </section>
                             
@@ -431,12 +433,12 @@
 
             
                 
-                <a href="../NodeJS/npm_express_json.html" class="navigation navigation-prev " aria-label="Previous page: NPM, Express y Package.json">
+                <a href="gh-pages.html" class="navigation navigation-prev " aria-label="Previous page: Qué son las Gh-pages">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="gitbook.html" class="navigation navigation-next " aria-label="Next page: Qué es Gitbook">
+                <a href="../Gulp/" class="navigation navigation-next " aria-label="Next page: Gulp">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -447,7 +449,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Gitbook","level":"1.3","depth":1,"next":{"title":"Qué es Gitbook","level":"1.3.1","depth":2,"path":"ElGitbook/gitbook.md","ref":"ElGitbook/gitbook.md","articles":[]},"previous":{"title":"NPM, Express y Package.json","level":"1.2.2","depth":2,"path":"NodeJS/npm_express_json.md","ref":"NodeJS/npm_express_json.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","advanced-emoji"],"root":"./txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"youtube":{},"advanced-emoji":{"embedEmojis":false},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Rafael Herrero, Daniel Ramos, Pedro Ramos","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Tareas iniciales","language":"es","gitbook":"*"},"file":{"path":"ElGitbook/README.md","mtime":"2016-09-30T07:20:18.674Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-09-30T09:56:32.457Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Cómo usar Gh-pages para automatizar despliegues","level":"1.4.2","depth":2,"next":{"title":"Gulp","level":"1.5","depth":1,"path":"Gulp/README.md","ref":"Gulp/README.md","articles":[{"title":"Qué es Gulp","level":"1.5.1","depth":2,"path":"Gulp/queEsGulp.md","ref":"Gulp/queEsGulp.md","articles":[]},{"title":"Cómo automatizar tareas con Gulp","level":"1.5.2","depth":2,"path":"Gulp/automatizarTareasConGulp.md","ref":"Gulp/automatizarTareasConGulp.md","articles":[]},{"title":"Gulp 4 y ES7","level":"1.5.3","depth":2,"path":"Gulp/gulp4yES7.md","ref":"Gulp/gulp4yES7.md","articles":[]},{"title":"Nuestro Gulpfile","level":"1.5.4","depth":2,"path":"Gulp/nuestroGulpfile.md","ref":"Gulp/nuestroGulpfile.md","articles":[]}]},"previous":{"title":"Qué son las Gh-pages","level":"1.4.1","depth":2,"path":"Gh-page/gh-pages.md","ref":"Gh-page/gh-pages.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","advanced-emoji"],"root":"./txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"youtube":{},"advanced-emoji":{"embedEmojis":false},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Rafael Herrero, Daniel Ramos, Pedro Ramos","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Tareas iniciales","language":"es","gitbook":"*"},"file":{"path":"Gh-page/automatiza_gh-pages.md","mtime":"2016-09-30T09:48:26.179Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-09-30T09:56:32.457Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
