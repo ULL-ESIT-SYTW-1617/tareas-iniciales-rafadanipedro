@@ -13,8 +13,8 @@
   * [Para qué se usa book.json](ElGitbook/bookjson.md)
 
 * [Gh-pages](Gh-page/README.md)
-  * [Qué son las Gh-pages](Gh-page/.md)
-  * [Cómo usar Gh-pages para automatizar despliegues](Gh-page/.md)
+  * [Qué son las Gh-pages](Gh-page/gh-pages.md)
+  * [Cómo usar Gh-pages para automatizar despliegues](Gh-page/automatiza_gh-pages.md)
 
 * [Gulp](Gulp/README.md)
   * [Qué es Gulp](Gulp/queEsGulp.md)
