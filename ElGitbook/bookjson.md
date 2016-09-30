@@ -1,1 +1,0 @@
-# Para qué se usa book.json
