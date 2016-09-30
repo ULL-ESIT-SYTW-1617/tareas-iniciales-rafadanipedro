@@ -15,7 +15,6 @@
 * [Gh-pages](Gh-page/README.md)
   * [Qué son las Gh-pages](Gh-page/.md)
   * [Cómo usar Gh-pages para automatizar despliegues](Gh-page/.md)
-  * [Cómo añadir estilos a las Gh-pages](Gh-page/.md)
 
 * [Gulp](Gulp/README.md)
   * [Qué es Gulp](Gulp/queEsGulp.md)
