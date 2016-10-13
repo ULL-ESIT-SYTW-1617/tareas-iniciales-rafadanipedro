@@ -6,6 +6,12 @@ En esta práctica aprenderemos a utilizar la herramienta de *GitBook*, explicand
 ## GitBook
 La herramienta GitBook nos permite crear libros de manera online utilizando únicamente GitHub/Git y el lenguaje de marcado Markdown.
 
+## Gulp 4
+En esta práctica hemos usado gulp 4 para poner en práctica algunas de sus nuevas características. El problema de usar Gulp 4, es que no es compatible con Gulp 4, por lo que tendremos que desinstalar la versión antigua, y usar la nueva.
+  
+  * `npm rm gulp -g`
+  * `npm install gulpjs/gulp-cli -g`
+
 ## Enlace al libro publicado en Gitbook
  * [Gitbook Tareas Iniciales SYTW](https://alu0100505078.gitbooks.io/tareas-iniciales-rafadanipedro/content/)
 
