@@ -1,7 +1,7 @@
 # Tareas Iniciales. Práctica 1 de SYTW
 
 ## Introducción
-En esta práctica aprenderemos a utilizar la herramienta de *GitBook*, explicando los pasos que hemos seguido para la creación del mismo haciendo uso de utilidades como Node, Gulp, etc.
+En esta práctica aprenderemos a utilizar la herramienta de *GitBook*, explicando los pasos que hemos seguido para la creación del mismo haciendo uso de utilidades como Node, Gulp, etc .
 
 ## GitBook
 La herramienta GitBook nos permite crear libros de manera online utilizando únicamente GitHub/Git y el lenguaje de marcado Markdown.
