@@ -11,6 +11,11 @@ En esta práctica hemos usado gulp 4 para poner en práctica algunas de sus nuev
   
   * `npm rm gulp -g`
   * `npm install gulpjs/gulp-cli -g`
+  
+## Node v6.7.0
+Utilizar nodejs en la versión 6.7.0 para evitar posibles fallos de ejecución. Para ello, tenemos que instalarla así:
+
+  * `nvm install v6.7.0`
 
 ## Enlace al libro publicado en Gitbook
  * [Gitbook Tareas Iniciales SYTW](https://alu0100505078.gitbooks.io/tareas-iniciales-rafadanipedro/content/)
