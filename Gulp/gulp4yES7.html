@@ -2,13 +2,13 @@
 <!DOCTYPE HTML>
 <html lang="es" >
     <head>
-        <title>Gulp 4 y ES7 · Tareas iniciales</title>
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Gulp 4 y ES7 · Tareas iniciales</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.0">
-        <meta name="author" content="Rafael Herrero, Daniel Ramos, Pedro Ramos">
+        <meta name="generator" content="GitBook 3.2.2">
+        <meta name="author" content="Rafael Herrero, Daniel Ramos, Pedro Ramos ">
         
         
     
@@ -396,16 +396,31 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="gulp-4-y-es7">Gulp 4 y ES7</h1><p>Dentro de poco saldr&#xE1; la <a href="https://github.com/gulpjs/gulp/blob/4.0/CHANGELOG.md" target="_blank">versi&#xF3;n 4 de Gulp</a>. En esta secci&#xF3;n comentaremos algunas de sus novedades as&#xED; como su combinaci&#xF3;n con nuevas funciones de <a href="https://h3manth.com/new/blog/2015/es7-features/" target="_blank">ECMAScript 2016 (ES7)</a>. La versi&#xF3;n 4 de gulp y su documentaci&#xF3;n correspondiente est&#xE1; disponible en la <a href="https://github.com/gulpjs/gulp/tree/4.0" target="_blank">rama &quot;4.0&quot;</a> del repositorio de Github.</p><h2 id="instalaci&#xF3;n">Instalaci&#xF3;n</h2><p>Para poder hacer uso de estas novedades bleeding edge, necesitaremos hacer una incializaci&#xF3;n algo m&#xE1;s compleja que la normal.</p><h3 id="1-instalar-gulp-4-babel-sus-presets-y-plugins">1. Instalar Gulp 4, babel, sus presets y plugins</h3><p>Necesitaremos babel para poder transpilar el c&#xF3;digo de ES7 a uno que pueda ejecutar node, ya que estas caracter&#xED;sticas nuevas de javascript no est&#xE1;n disponibles ni siquiera usando el par&#xE1;metro <code>--harmony</code>. Vamos a necesitar el perset para transpilar a ES2015, <code>stage-0</code>, y el plugin <code>babel-polyfill</code>. Con toda esta sopa de paquetes podremos emular un entorno de ES7.</p><p><code>npm install babel-register babel-preset-es2015 babel-preset-stage-0 babel-polyfill</code></p><p>Para usar Gulp 4 necesitamos eliminar las versiones anteriores de Gulp e instalar las nuevas, ya que no son compatibles:</p><pre><code>npm rm -g gulp
+                                <h1 id="gulp-4-y-es7">Gulp 4 y ES7</h1>
+<p>Dentro de poco saldr&#xE1; la <a href="https://github.com/gulpjs/gulp/blob/4.0/CHANGELOG.md" target="_blank">versi&#xF3;n 4 de Gulp</a>. En esta secci&#xF3;n comentaremos algunas de sus novedades as&#xED; como su combinaci&#xF3;n con nuevas funciones de <a href="https://h3manth.com/new/blog/2015/es7-features/" target="_blank">ECMAScript 2016 (ES7)</a>. La versi&#xF3;n 4 de gulp y su documentaci&#xF3;n correspondiente est&#xE1; disponible en la <a href="https://github.com/gulpjs/gulp/tree/4.0" target="_blank">rama &quot;4.0&quot;</a> del repositorio de Github.</p>
+<h2 id="instalaci&#xF3;n">Instalaci&#xF3;n</h2>
+<p>Para poder hacer uso de estas novedades bleeding edge, necesitaremos hacer una incializaci&#xF3;n algo m&#xE1;s compleja que la normal.</p>
+<h3 id="1-instalar-gulp-4-babel-sus-presets-y-plugins">1. Instalar Gulp 4, babel, sus presets y plugins</h3>
+<p>Necesitaremos babel para poder transpilar el c&#xF3;digo de ES7 a uno que pueda ejecutar node, ya que estas caracter&#xED;sticas nuevas de javascript no est&#xE1;n disponibles ni siquiera usando el par&#xE1;metro <code>--harmony</code>. Vamos a necesitar el perset para transpilar a ES2015, <code>stage-0</code>, y el plugin <code>babel-polyfill</code>. Con toda esta sopa de paquetes podremos emular un entorno de ES7.</p>
+<p><code>npm install babel-register babel-preset-es2015 babel-preset-stage-0 babel-polyfill</code></p>
+<p>Para usar Gulp 4 necesitamos eliminar las versiones anteriores de Gulp e instalar las nuevas, ya que no son compatibles:</p>
+<pre><code>npm rm -g gulp
 npm install -g gulp-cli
-npm install -D &apos;gulpjs/gulp.git#4.0&apos;</code></pre>
-<h3 id="2-crear-el-fichero-babelrc">2. Crear el fichero <code>.babelrc</code></h3><p>Este fichero lo usaremos para almacenar la configuraci&#xF3;n de babel, que en nuestro caso es muy sencillito:</p><pre><code class="lang-json">{
+npm install -D &apos;gulpjs/gulp.git#4.0&apos;
+</code></pre><h3 id="2-crear-el-fichero-babelrc">2. Crear el fichero <code>.babelrc</code></h3>
+<p>Este fichero lo usaremos para almacenar la configuraci&#xF3;n de babel, que en nuestro caso es muy sencillito:</p>
+<pre><code class="lang-json">{
   <span class="hljs-string">&quot;presets&quot;</span>: [<span class="hljs-string">&quot;es2015&quot;</span>, <span class="hljs-string">&quot;stage-0&quot;</span>],
   <span class="hljs-string">&quot;plugins&quot;</span>: [
     <span class="hljs-string">&quot;babel-polyfill&quot;</span>
   ]
-}</code></pre>
-<h3 id="2-crear-el-gulpfile">2. Crear el <code>gulpfile</code></h3><p>La particularidad de este gulpfile, es que tiene que llamarse <code>gulpfile.babel.js</code>, de esta manera cuando sea ejecutado se llamar&#xE1; autom&#xE1;ticamente a babel para transpilar neustro c&#xF3;digo.</p><h2 id="es6-import-y-export">ES6, <code>import</code> y <code>export</code></h2><p>Una de las novedades de ES6 es el sistema de m&#xF3;dulos. Con estas nuevas palabras claves podemos importar y exportar con una sintaxis m&#xE1;s clara, adem&#xE1;s de otras ventajas.</p><pre><code class="lang-javascript"><span class="hljs-comment">// Importando un paquete</span>
+}
+</code></pre>
+<h3 id="2-crear-el-gulpfile">2. Crear el <code>gulpfile</code></h3>
+<p>La particularidad de este gulpfile, es que tiene que llamarse <code>gulpfile.babel.js</code>, de esta manera cuando sea ejecutado se llamar&#xE1; autom&#xE1;ticamente a babel para transpilar neustro c&#xF3;digo.</p>
+<h2 id="es6-import-y-export">ES6, <code>import</code> y <code>export</code></h2>
+<p>Una de las novedades de ES6 es el sistema de m&#xF3;dulos. Con estas nuevas palabras claves podemos importar y exportar con una sintaxis m&#xE1;s clara, adem&#xE1;s de otras ventajas.</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// Importando un paquete</span>
 <span class="hljs-keyword">import</span> _ <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;lodash&apos;</span>
 
 <span class="hljs-comment">// Deconstruyendo las variables que exporta gulp</span>
@@ -418,8 +433,12 @@ npm install -D &apos;gulpjs/gulp.git#4.0&apos;</code></pre>
 <span class="hljs-keyword">const</span> bar = () =&gt; <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Hola Mundo!&apos;</span>)
 
 <span class="hljs-comment">// Exporando nuestras variables</span>
-<span class="hljs-keyword">export</span> { foo, bar }</code></pre>
-<h2 id="es7-async-y-await">ES7, <code>async</code> y <code>await</code></h2><p>Una de las novedades de ES7 (que est&#xE1; un poco verde todav&#xED;a), son las nuevas palabras claves <code>async</code> y <code>await</code>. Con ellas podemos crear funciones as&#xED;ncronas de una forma mucho m&#xE1;s legible que con callbacks o promesas, y as&#xED; evitando un callback hell.</p><p><strong>Usando callbacks</strong></p><pre><code class="lang-javascript"><span class="hljs-keyword">import</span> fs <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;fs&apos;</span>
+<span class="hljs-keyword">export</span> { foo, bar }
+</code></pre>
+<h2 id="es7-async-y-await">ES7, <code>async</code> y <code>await</code></h2>
+<p>Una de las novedades de ES7 (que est&#xE1; un poco verde todav&#xED;a), son las nuevas palabras claves <code>async</code> y <code>await</code>. Con ellas podemos crear funciones as&#xED;ncronas de una forma mucho m&#xE1;s legible que con callbacks o promesas, y as&#xED; evitando un callback hell.</p>
+<p><strong>Usando callbacks</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> fs <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;fs&apos;</span>
 
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params">src, dst, callback</span>) </span>{
   fs.readFile(src, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err, data</span>) </span>{
@@ -431,8 +450,10 @@ npm install -D &apos;gulpjs/gulp.git#4.0&apos;</code></pre>
 foo(<span class="hljs-string">&apos;srcDir&apos;</span>, <span class="hljs-string">&apos;destDir&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err</span>) </span>{
   <span class="hljs-keyword">if</span>(err) { <span class="hljs-keyword">return</span> <span class="hljs-built_in">console</span>.error(err) }
   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Terminado&apos;</span>)
-})</code></pre>
-<p><strong>Con promesas</strong></p><pre><code class="lang-javascript"><span class="hljs-keyword">import</span> fs <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;fs-promise&apos;</span>
+})
+</code></pre>
+<p><strong>Con promesas</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> fs <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;fs-promise&apos;</span>
 
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params">src, dst</span>) </span>{
   <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>((res, rej) =&gt; {
@@ -442,17 +463,26 @@ foo(<span class="hljs-string">&apos;srcDir&apos;</span>, <span class="hljs-strin
   })
 }
 
-foo(<span class="hljs-string">&apos;srcDir&apos;</span>, <span class="hljs-string">&apos;destDir&apos;</span>).then(() =&gt; <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Terminado&apos;</span>))</code></pre>
-<p><strong>Con async y await</strong></p><pre><code class="lang-javascript"><span class="hljs-keyword">import</span> fs <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;fs-promise&apos;</span>
+foo(<span class="hljs-string">&apos;srcDir&apos;</span>, <span class="hljs-string">&apos;destDir&apos;</span>).then(() =&gt; <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Terminado&apos;</span>))
+</code></pre>
+<p><strong>Con async y await</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> fs <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;fs-promise&apos;</span>
 
 <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params">src, dst</span>) </span>{
   <span class="hljs-keyword">let</span> data = <span class="hljs-keyword">await</span> fs.readFile(src)
   <span class="hljs-keyword">await</span> fs.writeFile(dst, data)
 }
 
-foo(<span class="hljs-string">&apos;srcDir&apos;</span>, <span class="hljs-string">&apos;destDir&apos;</span>).then(() =&gt; <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Terminado&apos;</span>))</code></pre>
-<p>El efecto que provocan <code>async</code> y <code>await</code>, es devolver un promesa en una funci&#xF3;n as&#xED;ncrona, y resolverla cuando se produzca un return.</p><h2 id="gulp-4-series-y-parallel">Gulp 4, <code>series</code> y <code>parallel</code></h2><p>Gulp 4 elimina el par&#xE1;metro de dependencias y los reemplaza con dos nuevas funciones, <code>series</code> y <code>parallel</code>, que nos permiten ejecutar distintas tareas y mantener un flujo entre ellas. Por ejemplo, podemos minificar los HTML, CSS y JS cada uno con su tarea de forma paralela y al final moverlo a un directorio.</p><pre><code class="lang-javascript">gulp.task(<span class="hljs-string">&apos;default&apos;</span>, gulp.series(<span class="hljs-string">&apos;clean&apos;</span>, gulp.parallel(<span class="hljs-string">&apos;styles&apos;</span>, <span class="hljs-string">&apos;html&apos;</span>, <span class="hljs-string">&apos;scripts&apos;</span>), <span class="hljs-string">&apos;release&apos;</span>))</code></pre>
-<h2 id="combinando-todo-esto">Combinando todo esto</h2><p>Combinando ES7 y Gulp 4 es una gran idea. Podemos exportar una funci&#xF3;n en el gulpfile y Gulp lo interpetrar&#xE1; como una tarea ejecutable. Y adem&#xE1;s estas funciones pueden ser as&#xED;ncronas (ya que devuelven una promesa).</p><pre><code class="lang-javascript"><span class="hljs-keyword">import</span> { series, parallel } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;gulp&apos;</span>
+foo(<span class="hljs-string">&apos;srcDir&apos;</span>, <span class="hljs-string">&apos;destDir&apos;</span>).then(() =&gt; <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Terminado&apos;</span>))
+</code></pre>
+<p>El efecto que provocan <code>async</code> y <code>await</code>, es devolver un promesa en una funci&#xF3;n as&#xED;ncrona, y resolverla cuando se produzca un return.</p>
+<h2 id="gulp-4-series-y-parallel">Gulp 4, <code>series</code> y <code>parallel</code></h2>
+<p>Gulp 4 elimina el par&#xE1;metro de dependencias y los reemplaza con dos nuevas funciones, <code>series</code> y <code>parallel</code>, que nos permiten ejecutar distintas tareas y mantener un flujo entre ellas. Por ejemplo, podemos minificar los HTML, CSS y JS cada uno con su tarea de forma paralela y al final moverlo a un directorio.</p>
+<pre><code class="lang-javascript">gulp.task(<span class="hljs-string">&apos;default&apos;</span>, gulp.series(<span class="hljs-string">&apos;clean&apos;</span>, gulp.parallel(<span class="hljs-string">&apos;styles&apos;</span>, <span class="hljs-string">&apos;html&apos;</span>, <span class="hljs-string">&apos;scripts&apos;</span>), <span class="hljs-string">&apos;release&apos;</span>))
+</code></pre>
+<h2 id="combinando-todo-esto">Combinando todo esto</h2>
+<p>Combinando ES7 y Gulp 4 es una gran idea. Podemos exportar una funci&#xF3;n en el gulpfile y Gulp lo interpetrar&#xE1; como una tarea ejecutable. Y adem&#xE1;s estas funciones pueden ser as&#xED;ncronas (ya que devuelven una promesa).</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> { series, parallel } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;gulp&apos;</span>
 
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">minify</span> (<span class="hljs-params"></span>) </span>{
   <span class="hljs-comment">// Hacer cosas as&#xED;ncronas</span>
@@ -464,16 +494,19 @@ foo(<span class="hljs-string">&apos;srcDir&apos;</span>, <span class="hljs-strin
 
 <span class="hljs-keyword">const</span> build = series(minify, clean)
 
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> build</code></pre>
-<p>Al final quedar&#xE1; una estructura como esta:</p><pre><code>&#x251C;&#x2500;&#x252C; build
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> build
+</code></pre>
+<p>Al final quedar&#xE1; una estructura como esta:</p>
+<pre><code>&#x251C;&#x2500;&#x252C; build
 &#x2502; &#x2514;&#x2500;&#x252C; &lt;series&gt;
 &#x2502;   &#x251C;&#x2500;&#x2500; minify
 &#x2502;   &#x2514;&#x2500;&#x2500; clean
 &#x2514;&#x2500;&#x252C; default
   &#x2514;&#x2500;&#x252C; &lt;series&gt;
     &#x251C;&#x2500;&#x2500; minify
-    &#x2514;&#x2500;&#x2500; clean</code></pre>
-<p>Esta pr&#xE1;ctica la hemos hecho usando esta tecnolog&#xED;a, <a href="https://github.com/ULL-ESIT-SYTW-1617/tareas-iniciales-rafadanipedro/blob/master/gulpfile.babel.js" target="_blank">aqu&#xED;</a> el link al Gulpfile. En &#xE9;l se importan funciones as&#xED;ncronas desde el directorio <code>scripts</code> para tenerlo m&#xE1;s organizado, y se exportan en el <code>gulpfile</code>.</p>
+    &#x2514;&#x2500;&#x2500; clean
+</code></pre><p>Esta pr&#xE1;ctica la hemos hecho usando esta tecnolog&#xED;a, <a href="https://github.com/ULL-ESIT-SYTW-1617/tareas-iniciales-rafadanipedro/blob/master/gulpfile.babel.js" target="_blank">aqu&#xED;</a> el link al Gulpfile. En &#xE9;l se importan funciones as&#xED;ncronas desde el directorio <code>scripts</code> para tenerlo m&#xE1;s organizado, y se exportan en el <code>gulpfile</code>.</p>
+
                                 
                                 </section>
                             
@@ -516,7 +549,7 @@ foo(<span class="hljs-string">&apos;srcDir&apos;</span>, <span class="hljs-strin
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Gulp 4 y ES7","level":"1.5.3","depth":2,"next":{"title":"Nuestro Gulpfile","level":"1.5.4","depth":2,"path":"Gulp/nuestroGulpfile.md","ref":"Gulp/nuestroGulpfile.md","articles":[]},"previous":{"title":"Cómo automatizar tareas con Gulp","level":"1.5.2","depth":2,"path":"Gulp/automatizarTareasConGulp.md","ref":"Gulp/automatizarTareasConGulp.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","advanced-emoji"],"root":"./txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"youtube":{},"advanced-emoji":{"embedEmojis":false},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Rafael Herrero, Daniel Ramos, Pedro Ramos","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Tareas iniciales","language":"es","gitbook":"*"},"file":{"path":"Gulp/gulp4yES7.md","mtime":"2016-09-30T07:20:18.682Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-09-30T09:56:32.457Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Gulp 4 y ES7","level":"1.5.3","depth":2,"next":{"title":"Nuestro Gulpfile","level":"1.5.4","depth":2,"path":"Gulp/nuestroGulpfile.md","ref":"Gulp/nuestroGulpfile.md","articles":[]},"previous":{"title":"Cómo automatizar tareas con Gulp","level":"1.5.2","depth":2,"path":"Gulp/automatizarTareasConGulp.md","ref":"Gulp/automatizarTareasConGulp.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","advanced-emoji"],"root":"./txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"youtube":{},"advanced-emoji":{"embedEmojis":false},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Rafael Herrero, Daniel Ramos, Pedro Ramos ","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Tareas iniciales","language":"es","gitbook":"*"},"file":{"path":"Gulp/gulp4yES7.md","mtime":"2016-10-13T17:41:05.321Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-10-13T17:57:21.631Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

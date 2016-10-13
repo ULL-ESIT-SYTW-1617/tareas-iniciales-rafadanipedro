@@ -2,13 +2,13 @@
 <!DOCTYPE HTML>
 <html lang="es" >
     <head>
-        <title>Cómo automatizar tareas con Gulp · Tareas iniciales</title>
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Cómo automatizar tareas con Gulp · Tareas iniciales</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.0">
-        <meta name="author" content="Rafael Herrero, Daniel Ramos, Pedro Ramos">
+        <meta name="generator" content="GitBook 3.2.2">
+        <meta name="author" content="Rafael Herrero, Daniel Ramos, Pedro Ramos ">
         
         
     
@@ -396,15 +396,28 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="c&#xF3;mo-automatizar-tareas-con-gulp">C&#xF3;mo automatizar tareas con Gulp</h1><p>En esta secci&#xF3;n veremos c&#xF3;mo usar gulpfile, tomando de ejemplo un desarrollo simple de frontend.</p><h2 id="fichero-gulpfilejs">Fichero <code>gulpfile.js</code></h2><p>Al igual que otros automatizadores de tareas, ncesitaremos un fichero de configuraci&#xF3;n donde almacenaremos nuestras tareas y otras cosas que necesitemos. Gulp sigue la convenci&#xF3;n de llamar a su fichero por el nombre del programa y la palabra <code>file</code>, como <code>makefile</code>, <code>rakefile</code> o <code>gruntfile</code>.</p><h2 id="plugins-para-gulp">Plugins para Gulp</h2><p>Gulp cuenta con una gran cantidad de plugins (alrededor de 15.000) en forma de paquetes de Node. Estos plugins los usaremos para realizar nuestras tareas, por ejemplo podr&#xED;amos usar <a href="https://www.npmjs.com/package/gulp-uglify" target="_blank"><code>gulp-uglify</code></a> para minificar ficheros. Estos plugins se pueden concatenar unos con otros haciendo uso de <a href="https://nodejs.org/api/stream.html#stream_readable_pipe_destination_options" target="_blank"><code>Stream.pipe</code></a>.</p><p>Existen plugins de todo tipo, para compilar pseudolenguages como SASS o Coffescript, minificaci&#xF3;n de ficheros, concatenaci&#xF3;n, etc. Incluso podemos crear nuestros propios plugins.</p><h2 id="creando-una-tarea">Creando una tarea</h2><p>Para poder crear una tarea, necesitamos llamar a la funci&#xF3;n <code>task</code> de gulp, y pasarle como par&#xE1;metros el nombre de la tarea y la funci&#xF3;n que se ejecutar&#xE1; al ser llamada. Por ejemplo, para minificar ficheros y almacenarlos en el directorio <code>dist</code>:</p><pre><code class="lang-javascript"><span class="hljs-keyword">var</span> gulp = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;gulp&apos;</span>);
+                                <h1 id="c&#xF3;mo-automatizar-tareas-con-gulp">C&#xF3;mo automatizar tareas con Gulp</h1>
+<p>En esta secci&#xF3;n veremos c&#xF3;mo usar gulpfile, tomando de ejemplo un desarrollo simple de frontend.</p>
+<h2 id="fichero-gulpfilejs">Fichero <code>gulpfile.js</code></h2>
+<p>Al igual que otros automatizadores de tareas, ncesitaremos un fichero de configuraci&#xF3;n donde almacenaremos nuestras tareas y otras cosas que necesitemos. Gulp sigue la convenci&#xF3;n de llamar a su fichero por el nombre del programa y la palabra <code>file</code>, como <code>makefile</code>, <code>rakefile</code> o <code>gruntfile</code>.</p>
+<h2 id="plugins-para-gulp">Plugins para Gulp</h2>
+<p>Gulp cuenta con una gran cantidad de plugins (alrededor de 15.000) en forma de paquetes de Node. Estos plugins los usaremos para realizar nuestras tareas, por ejemplo podr&#xED;amos usar <a href="https://www.npmjs.com/package/gulp-uglify" target="_blank"><code>gulp-uglify</code></a> para minificar ficheros. Estos plugins se pueden concatenar unos con otros haciendo uso de <a href="https://nodejs.org/api/stream.html#stream_readable_pipe_destination_options" target="_blank"><code>Stream.pipe</code></a>.</p>
+<p>Existen plugins de todo tipo, para compilar pseudolenguages como SASS o Coffescript, minificaci&#xF3;n de ficheros, concatenaci&#xF3;n, etc. Incluso podemos crear nuestros propios plugins.</p>
+<h2 id="creando-una-tarea">Creando una tarea</h2>
+<p>Para poder crear una tarea, necesitamos llamar a la funci&#xF3;n <code>task</code> de gulp, y pasarle como par&#xE1;metros el nombre de la tarea y la funci&#xF3;n que se ejecutar&#xE1; al ser llamada. Por ejemplo, para minificar ficheros y almacenarlos en el directorio <code>dist</code>:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> gulp = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;gulp&apos;</span>);
 <span class="hljs-keyword">var</span> minify = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;gulp-minifier&apos;</span>);
 
 gulp.task(<span class="hljs-string">&apos;minify&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
   <span class="hljs-keyword">return</span> gulp.src([<span class="hljs-string">&apos;index.html&apos;</span>, <span class="hljs-string">&apos;styles.css&apos;</span>, <span class="hljs-string">&apos;main.js&apos;</span>])
     .pipe(minify())
     .pipe(gulp.dest(<span class="hljs-string">&apos;dist&apos;</span>));
-})</code></pre>
-<p>De este modo, minificar&#xED;amos los ficheros <code>index.html</code>, <code>styles.css</code> y <code>main.js</code> y los almacenar&#xED;amos en <code>dist</code>.</p><h2 id="dependencias-en-tareas">Dependencias en tareas</h2><p>Puede que nos encontremos ante el caso en el que para ejecutar una tarea, dependamos de ralizar una con anterioridad. Por ejemplo, haciendo uso de la tarea anterior, puede que necesitamos primero limpiar el directorio <code>dist</code> antes de colocar los ficheros minificados. Para este prop&#xF3;sito existe un segundo par&#xE1;metro a la hora de crear una tarea, que es un array con los nombres de las tareas de las que se depende. Por ejemplo:</p><pre><code class="lang-javascript"><span class="hljs-keyword">var</span> gulp = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;gulp&apos;</span>);
+})
+</code></pre>
+<p>De este modo, minificar&#xED;amos los ficheros <code>index.html</code>, <code>styles.css</code> y <code>main.js</code> y los almacenar&#xED;amos en <code>dist</code>.</p>
+<h2 id="dependencias-en-tareas">Dependencias en tareas</h2>
+<p>Puede que nos encontremos ante el caso en el que para ejecutar una tarea, dependamos de ralizar una con anterioridad. Por ejemplo, haciendo uso de la tarea anterior, puede que necesitamos primero limpiar el directorio <code>dist</code> antes de colocar los ficheros minificados. Para este prop&#xF3;sito existe un segundo par&#xE1;metro a la hora de crear una tarea, que es un array con los nombres de las tareas de las que se depende. Por ejemplo:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> gulp = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;gulp&apos;</span>);
 <span class="hljs-keyword">var</span> minify = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;gulp-minifier&apos;</span>);
 <span class="hljs-keyword">var</span> clean = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;gulp-clean&apos;</span>);
 
@@ -417,16 +430,26 @@ gulp.task(<span class="hljs-string">&apos;minify&apos;</span>, [<span class="hlj
 gulp.task(<span class="hljs-string">&apos;clean&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
   <span class="hljs-keyword">return</span> gulp.src(<span class="hljs-string">&apos;dist&apos;</span>, {read: <span class="hljs-literal">false</span>})
     .pipe(clean());
-})</code></pre>
-<p>De este modo, gulp ejecutar&#xE1; primero la tarea <code>clean</code>.</p><p><em>NOTA</em>: Si especificamos m&#xFA;ltiples dependencias, &#xE9;stas se ejecutar&#xE1;n de forma as&#xED;ncrona, por lo que necesitaremos alg&#xFA;n plugin como <a href="https://www.npmjs.com/package/gulp-sync" target="_blank">gulp-sync</a>. Esto queda solucionado en la versi&#xF3;n 4 de Gulp.</p><h2 id="tareas-as&#xED;ncronas">Tareas as&#xED;ncronas</h2><p>Para usar gulp no hay que usar obligatioriamente los pipes, podemos crear una funci&#xF3;n que simplemente sea un <code>console.log</code> y nos salude, por ejemplo:</p><pre><code class="lang-javascript">gulp.task(<span class="hljs-string">&apos;hello-world&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+})
+</code></pre>
+<p>De este modo, gulp ejecutar&#xE1; primero la tarea <code>clean</code>.</p>
+<p><em>NOTA</em>: Si especificamos m&#xFA;ltiples dependencias, &#xE9;stas se ejecutar&#xE1;n de forma as&#xED;ncrona, por lo que necesitaremos alg&#xFA;n plugin como <a href="https://www.npmjs.com/package/gulp-sync" target="_blank">gulp-sync</a>. Esto queda solucionado en la versi&#xF3;n 4 de Gulp.</p>
+<h2 id="tareas-as&#xED;ncronas">Tareas as&#xED;ncronas</h2>
+<p>Para usar gulp no hay que usar obligatioriamente los pipes, podemos crear una funci&#xF3;n que simplemente sea un <code>console.log</code> y nos salude, por ejemplo:</p>
+<pre><code class="lang-javascript">gulp.task(<span class="hljs-string">&apos;hello-world&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Hello World!&apos;</span>)
-})</code></pre>
-<p>Esto est&#xE1; bien cuando no encontremos el plugin necesario, o sea una tarea muy sencilla. Esta funci&#xF3;n que le pasamos a la tarea, puede recibir un par&#xE1;metro con una <a href="https://es.wikipedia.org/wiki/Callback_(inform%C3%A1tica" target="_blank"><code>callback</code></a>, que ejecutaremos cuando nuestra tarea haya terminado.</p><pre><code class="lang-javascript">gulp.task(<span class="hljs-string">&apos;hello-world&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">cb</span>) </span>{
+})
+</code></pre>
+<p>Esto est&#xE1; bien cuando no encontremos el plugin necesario, o sea una tarea muy sencilla. Esta funci&#xF3;n que le pasamos a la tarea, puede recibir un par&#xE1;metro con una <a href="https://es.wikipedia.org/wiki/Callback_(inform%C3%A1tica" target="_blank"><code>callback</code></a>, que ejecutaremos cuando nuestra tarea haya terminado.</p>
+<pre><code class="lang-javascript">gulp.task(<span class="hljs-string">&apos;hello-world&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">cb</span>) </span>{
   funcionAsincrona(<span class="hljs-string">&apos;prueba&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
     otraFuncion(<span class="hljs-string">&apos;prueba2&apos;</span>, cb)
   })
-})</code></pre>
-<p>De este modo, cuando <code>otraFuncion</code> termine de ejecutarse llamar&#xE1; a la callback y Gulp quedar&#xE1; notificado de que la tarea ha finalizado.</p><p>Otro modo de hacer uso de tareas as&#xED;ncronas, es devolver una  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank">Promesa</a>.</p><pre><code class="lang-javascript">gulp.task(<span class="hljs-string">&apos;hello-world&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">cb</span>) </span>{
+})
+</code></pre>
+<p>De este modo, cuando <code>otraFuncion</code> termine de ejecutarse llamar&#xE1; a la callback y Gulp quedar&#xE1; notificado de que la tarea ha finalizado.</p>
+<p>Otro modo de hacer uso de tareas as&#xED;ncronas, es devolver una  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank">Promesa</a>.</p>
+<pre><code class="lang-javascript">gulp.task(<span class="hljs-string">&apos;hello-world&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">cb</span>) </span>{
   <span class="hljs-keyword">return</span> funcionAsincrona()
     .then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve, reject</span>) </span>{
       ...
@@ -435,7 +458,8 @@ gulp.task(<span class="hljs-string">&apos;clean&apos;</span>, <span class="hljs-
       ...
     })
   })
-})</code></pre>
+})
+</code></pre>
 
                                 
                                 </section>
@@ -479,7 +503,7 @@ gulp.task(<span class="hljs-string">&apos;clean&apos;</span>, <span class="hljs-
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Cómo automatizar tareas con Gulp","level":"1.5.2","depth":2,"next":{"title":"Gulp 4 y ES7","level":"1.5.3","depth":2,"path":"Gulp/gulp4yES7.md","ref":"Gulp/gulp4yES7.md","articles":[]},"previous":{"title":"Qué es Gulp","level":"1.5.1","depth":2,"path":"Gulp/queEsGulp.md","ref":"Gulp/queEsGulp.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","advanced-emoji"],"root":"./txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"youtube":{},"advanced-emoji":{"embedEmojis":false},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Rafael Herrero, Daniel Ramos, Pedro Ramos","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Tareas iniciales","language":"es","gitbook":"*"},"file":{"path":"Gulp/automatizarTareasConGulp.md","mtime":"2016-09-29T09:52:35.201Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-09-30T09:56:32.457Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Cómo automatizar tareas con Gulp","level":"1.5.2","depth":2,"next":{"title":"Gulp 4 y ES7","level":"1.5.3","depth":2,"path":"Gulp/gulp4yES7.md","ref":"Gulp/gulp4yES7.md","articles":[]},"previous":{"title":"Qué es Gulp","level":"1.5.1","depth":2,"path":"Gulp/queEsGulp.md","ref":"Gulp/queEsGulp.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","advanced-emoji"],"root":"./txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"youtube":{},"advanced-emoji":{"embedEmojis":false},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Rafael Herrero, Daniel Ramos, Pedro Ramos ","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Tareas iniciales","language":"es","gitbook":"*"},"file":{"path":"Gulp/automatizarTareasConGulp.md","mtime":"2016-10-13T17:41:05.321Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-10-13T17:57:21.631Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

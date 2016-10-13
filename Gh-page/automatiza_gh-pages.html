@@ -2,13 +2,13 @@
 <!DOCTYPE HTML>
 <html lang="es" >
     <head>
-        <title>Cómo usar Gh-pages para automatizar despliegues · Tareas iniciales</title>
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Cómo usar Gh-pages para automatizar despliegues · Tareas iniciales</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.0">
-        <meta name="author" content="Rafael Herrero, Daniel Ramos, Pedro Ramos">
+        <meta name="generator" content="GitBook 3.2.2">
+        <meta name="author" content="Rafael Herrero, Daniel Ramos, Pedro Ramos ">
         
         
     
@@ -396,7 +396,9 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="c&#xF3;mo-usar-gh-pages-para-automatizar-despliegues">C&#xF3;mo usar Gh-pages para automatizar despliegues</h1><p>En esta pr&#xE1;ctica hemos usado el mismo script que ven&#xED;a en el boilerplate. Este script de Node.js usa el m&#xF3;dulo <a href="https://www.npmjs.com/package/gh-pages" target="_blank">gh-pages</a> como interfaz para interactuar con el repositorio.</p><pre><code class="lang-javascript"><span class="hljs-keyword">import</span> GhPages <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;gh-pages&apos;</span>
+                                <h1 id="c&#xF3;mo-usar-gh-pages-para-automatizar-despliegues">C&#xF3;mo usar Gh-pages para automatizar despliegues</h1>
+<p>En esta pr&#xE1;ctica hemos usado el mismo script que ven&#xED;a en el boilerplate. Este script de Node.js usa el m&#xF3;dulo <a href="https://www.npmjs.com/package/gh-pages" target="_blank">gh-pages</a> como interfaz para interactuar con el repositorio.</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> GhPages <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;gh-pages&apos;</span>
 
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">deployGitbook</span> (<span class="hljs-params"></span>) </span>{
   <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>((resolve, reject) =&gt; {
@@ -405,8 +407,10 @@
       logger: <span class="hljs-built_in">console</span>.log
     }, resolve)
   })
-}</code></pre>
+}
+</code></pre>
 <p>Delegamos totalmente la tarea de despliegue en este script. Le pasamos como par&#xE1;metro el campo <code>repository.url</code> del fichero <code>package.json</code>, que contiene la direcci&#xF3;n del repositorio.</p>
+
                                 
                                 </section>
                             
@@ -449,7 +453,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Cómo usar Gh-pages para automatizar despliegues","level":"1.4.2","depth":2,"next":{"title":"Gulp","level":"1.5","depth":1,"path":"Gulp/README.md","ref":"Gulp/README.md","articles":[{"title":"Qué es Gulp","level":"1.5.1","depth":2,"path":"Gulp/queEsGulp.md","ref":"Gulp/queEsGulp.md","articles":[]},{"title":"Cómo automatizar tareas con Gulp","level":"1.5.2","depth":2,"path":"Gulp/automatizarTareasConGulp.md","ref":"Gulp/automatizarTareasConGulp.md","articles":[]},{"title":"Gulp 4 y ES7","level":"1.5.3","depth":2,"path":"Gulp/gulp4yES7.md","ref":"Gulp/gulp4yES7.md","articles":[]},{"title":"Nuestro Gulpfile","level":"1.5.4","depth":2,"path":"Gulp/nuestroGulpfile.md","ref":"Gulp/nuestroGulpfile.md","articles":[]}]},"previous":{"title":"Qué son las Gh-pages","level":"1.4.1","depth":2,"path":"Gh-page/gh-pages.md","ref":"Gh-page/gh-pages.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","advanced-emoji"],"root":"./txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"youtube":{},"advanced-emoji":{"embedEmojis":false},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Rafael Herrero, Daniel Ramos, Pedro Ramos","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Tareas iniciales","language":"es","gitbook":"*"},"file":{"path":"Gh-page/automatiza_gh-pages.md","mtime":"2016-09-30T09:48:26.179Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-09-30T09:56:32.457Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Cómo usar Gh-pages para automatizar despliegues","level":"1.4.2","depth":2,"next":{"title":"Gulp","level":"1.5","depth":1,"path":"Gulp/README.md","ref":"Gulp/README.md","articles":[{"title":"Qué es Gulp","level":"1.5.1","depth":2,"path":"Gulp/queEsGulp.md","ref":"Gulp/queEsGulp.md","articles":[]},{"title":"Cómo automatizar tareas con Gulp","level":"1.5.2","depth":2,"path":"Gulp/automatizarTareasConGulp.md","ref":"Gulp/automatizarTareasConGulp.md","articles":[]},{"title":"Gulp 4 y ES7","level":"1.5.3","depth":2,"path":"Gulp/gulp4yES7.md","ref":"Gulp/gulp4yES7.md","articles":[]},{"title":"Nuestro Gulpfile","level":"1.5.4","depth":2,"path":"Gulp/nuestroGulpfile.md","ref":"Gulp/nuestroGulpfile.md","articles":[]}]},"previous":{"title":"Qué son las Gh-pages","level":"1.4.1","depth":2,"path":"Gh-page/gh-pages.md","ref":"Gh-page/gh-pages.md","articles":[]},"dir":"ltr"},"config":{"plugins":["youtube","advanced-emoji"],"root":"./txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"youtube":{},"advanced-emoji":{"embedEmojis":false},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Rafael Herrero, Daniel Ramos, Pedro Ramos ","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Tareas iniciales","language":"es","gitbook":"*"},"file":{"path":"Gh-page/automatiza_gh-pages.md","mtime":"2016-10-13T17:41:05.321Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-10-13T17:57:21.631Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
