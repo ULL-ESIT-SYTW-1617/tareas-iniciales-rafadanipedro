@@ -2,7 +2,7 @@
 
 Este tutorial explicará los pasos para instalar las diferentes herramientas que se utilizarán a lo largo de la asignatura  **SYTW** . Además, se mostrarán capturas del correcto funcionamiento de las mismas.
 
-Se mostrará información acerca de Nodejs, Gh-pages, Gulp y Gitbook.
+Se mostrará información acerca de Nodejs, Gh-pages, Gulp y Gitbook. Prueba!
 
 Las siguientes imágenes enlazan a nuestras respectivas páginas de usuario.
 
