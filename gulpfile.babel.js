@@ -10,7 +10,7 @@ import deployIaas from './scripts/deploy-iaas'
 import serve from './scripts/gitbook-serve'
 import install from './scripts/gitbook-install'
 
-export { generateGhPages, generateWiki, deployGhPages, deployWiki, serve }
+export { generateGhPages, generateWiki, deployGhPages, deployWiki, serve, deployIaas }
 
 export const build = series(install, parallel(generateGhPages, generateWiki))
 export const deploy = parallel(deployGhPages, deployWiki, deployIaas)
