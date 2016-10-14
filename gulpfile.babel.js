@@ -6,13 +6,14 @@ import generateGhPages from './scripts/generate-gh-pages'
 import generateWiki from './scripts/generate-wiki'
 import deployGhPages from './scripts/deploy-gh-pages'
 import deployWiki from './scripts/deploy-wiki'
+import deployIaas from './scripts/deploy-iaas'
 import serve from './scripts/gitbook-serve'
 import install from './scripts/gitbook-install'
 
 export { generateGhPages, generateWiki, deployGhPages, deployWiki, serve }
 
 export const build = series(install, parallel(generateGhPages, generateWiki))
-export const deploy = parallel(deployGhPages, deployWiki)
+export const deploy = parallel(deployGhPages, deployWiki, deployIaas)
 
 export const clean = () => src(['gh-pages', 'wiki', '_book']).pipe(gclean())
 
